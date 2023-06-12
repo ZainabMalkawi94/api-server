@@ -8,11 +8,11 @@ beforeAll(async () => {
 });
 describe('testing my server', () => {
     it('404 on a bad route', async () => {
-        const response = await mockServerMethods.get('/');
-        expect(response.status).toBe(200);
+        const response = await mockServerMethods.get('/No');
+        expect(response.status).toBe(404);
     });
     it('404 on a bad method', async () => {
-        const response = await mockServerMethods.get('/no');
+        const response = await mockServerMethods.post('/food/1');
         expect(response.status).toBe(404);
     });
     it('Create a food record using POST', async () => {
